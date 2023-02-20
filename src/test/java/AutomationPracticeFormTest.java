@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +15,7 @@ public class AutomationPracticeFormTest {
     @BeforeAll
     static void openPracticeForm(){
         Configuration.browserSize = "1920x1080";
+        Configuration.holdBrowserOpen = false;
         open("https://demoqa.com/automation-practice-form");
         System.out.println("Start Test!");
     }
@@ -43,8 +45,21 @@ public class AutomationPracticeFormTest {
         $("#react-select-4-option-0").click();
         $("#submit").click();
 
+    }
+    @AfterEach
+    void tableValidation (){
+            $("div.modal-header").shouldHave(text("Thanks for submitting the form"));
+            $(".modal-body").shouldHave(text("Semen Chernikov"));
+            $(".modal-body").shouldHave(text("chernikov.semen21@gmail.com"));
+            $(".modal-body").shouldHave(text("Male"));
+            $(".modal-body").shouldHave(text("9196742969"));
+            $(".modal-body").shouldHave(text("26 May,1990"));
+            $(".modal-body").shouldHave(text("English"));
+            $(".modal-body").shouldHave(text("Sports, Reading, Music"));
+            $(".modal-body").shouldHave(text("photo_2022-12-06_17-04-37.jpg"));
+            $(".modal-body").shouldHave(text("Chuvashuya, Cheboksary, boulvar Mittova d.3"));
+            $(".modal-body").shouldHave(text("NCR Delhi"));
 
     }
-
 
 }
