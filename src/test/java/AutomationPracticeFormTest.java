@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AutomationPracticeFormTest {
 
@@ -18,6 +17,8 @@ public class AutomationPracticeFormTest {
         Configuration.holdBrowserOpen = false;
         open("https://demoqa.com/automation-practice-form");
         System.out.println("Start Test!");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
     }
 
     @Test
