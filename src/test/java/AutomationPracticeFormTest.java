@@ -1,4 +1,3 @@
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,7 +21,7 @@ public class AutomationPracticeFormTest {
     }
 
     @Test
-    void FillingForm(){
+    void fillingForm(){
         $("#firstName").setValue("Semen");
         $("#lastName").setValue("Chernikov");
         $("#userEmail").setValue("chernikov.semen21@gmail.com");
