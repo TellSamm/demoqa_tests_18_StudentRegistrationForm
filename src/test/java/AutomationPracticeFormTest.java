@@ -51,9 +51,16 @@ public class AutomationPracticeFormTest {
     @AfterEach
     void tableValidation() {
         $("div.modal-header").shouldHave(text("Thanks for submitting the form"));
-        $(".modal-body").shouldHave(text("Semen Chernikov"), text("chernikov.semen21@gmail.com"), text("Male"),
-                text("9196742969"), text("30 May,1990"), text("English"), text("Sports"), text("photo_2022.jpg"),
-                text("boulvar Mittova d.3"), text("NCR Delhi"));
+        $(".modal-body").shouldHave(text("Semen Chernikov"));
+        $(".modal-body").shouldHave(text("chernikov.semen21@gmail.com"));
+        $(".modal-body").shouldHave(text("Male"));
+        $(".modal-body").shouldHave(text("9196742969"));
+        $(".modal-body").shouldHave(text("30 May,1990"));
+        $(".modal-body").shouldHave(text("English"));
+        $(".modal-body").shouldHave(text("Sports"));
+        $(".modal-body").shouldHave(text("photo_2022.jpg"));
+        $(".modal-body").shouldHave(text("Chuvashuya, Cheboksary, boulvar Mittova d.3"));
+        $(".modal-body").shouldHave(text("NCR Delhi"));
     }
 
 }
