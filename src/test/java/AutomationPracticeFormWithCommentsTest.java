@@ -7,8 +7,9 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 
-public class AutomationPracticeFormTest {
+public class AutomationPracticeFormWithCommentsTest {
 
     @BeforeAll
     static void openPracticeForm() {
@@ -54,6 +55,15 @@ public class AutomationPracticeFormTest {
         $(".modal-body").shouldHave(text("Semen Chernikov"), text("chernikov.semen21@gmail.com"), text("Male"),
                 text("9196742969"), text("30 May,1990"), text("English"), text("Sports"), text("photo_2022.jpg"),
                 text("boulvar Mittova d.3"), text("NCR Delhi"));
-    }
+//            $(".modal-body").shouldHave(text("chernikov.semen21@gmail.com"));
+//            $(".modal-body").shouldHave(text("Male"));
+//            $(".modal-body").shouldHave(text("9196742969"));
+//            $(".modal-body").shouldHave(text("30 May,1990"));
+//            $(".modal-body").shouldHave(text("English"));
+//            $(".modal-body").shouldHave(text("Sports"));
+//            $(".modal-body").shouldHave(text("photo_2022.jpg"));
+//            $(".modal-body").shouldHave(text("Chuvashuya, Cheboksary, boulvar Mittova d.3"));
+//            $(".modal-body").shouldHave(text("NCR Delhi"));
 
+    }
 }
