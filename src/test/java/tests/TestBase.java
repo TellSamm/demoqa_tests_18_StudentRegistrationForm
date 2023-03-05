@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeAll;
 import pages.RegistrationPage;
 
 
-
 public class TestBase {
 
     String userName = "Semen";
