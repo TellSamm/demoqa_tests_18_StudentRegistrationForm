@@ -46,14 +46,23 @@ public class RegistrationPage {
     stateAndCitySelectionBlock = $("#stateCity-wrapper");
 
 
+    private final String fixedban = "$('#fixedban').remove()";
+    private final String footer = "$('footer').remove()";
+
+
     public RegistrationPage openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(TITLE_TEXT));
         System.out.println("Start Test!");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
 
         return this;
+    }
+
+    public RegistrationPage bannerRemoval(){
+        executeJavaScript(fixedban);
+        executeJavaScript(footer);
+
+       return this;
     }
 
     public RegistrationPage setFirstName(String value) {

@@ -29,15 +29,10 @@ public class TestBase {
     @BeforeAll
     static void openPracticeForm() {
         Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = false;
         open("https://demoqa.com/automation-practice-form");
 
-
-    }
-
-    @Test
-    void introductoryTextTest() {
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
     }
 
 

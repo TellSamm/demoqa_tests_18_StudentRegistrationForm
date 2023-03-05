@@ -8,6 +8,7 @@ public class AutomationPracticeFormPageObjectsTest extends TestBase {
     @Test
     void fillingForm() {
         registrationPage.openPage()
+                .bannerRemoval()
                 .setFirstName(userName)
                 .setLastName(userLastName)
                 .setEmail(userEmail)
