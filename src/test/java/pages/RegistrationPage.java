@@ -46,8 +46,8 @@ public class RegistrationPage {
     stateAndCitySelectionBlock = $("#stateCity-wrapper");
 
 
-    private final String fixedban = "$('#fixedban').remove()";
-    private final String footer = "$('footer').remove()";
+    private final String FIXEDBAN = "$('#fixedban').remove()";
+    private final String FOOTER = "$('footer').remove()";
 
 
     public RegistrationPage openPage() {
@@ -59,8 +59,8 @@ public class RegistrationPage {
     }
 
     public RegistrationPage bannerRemoval(){
-        executeJavaScript(fixedban);
-        executeJavaScript(footer);
+        executeJavaScript(FIXEDBAN);
+        executeJavaScript(FOOTER);
 
        return this;
     }

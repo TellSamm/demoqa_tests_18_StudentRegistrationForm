@@ -2,11 +2,10 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
 import pages.RegistrationPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+
 
 public class TestBase {
 
@@ -31,8 +30,6 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = false;
-        open("https://demoqa.com/automation-practice-form");
-
     }
 
 
