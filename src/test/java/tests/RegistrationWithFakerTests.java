@@ -1,11 +1,9 @@
 package tests;
-
 import org.junit.jupiter.api.Test;
-
 import static tests.TestData.*;
 import static utils.RandomUtils.getRandomItemFromArray;
 
-public class RegistrationWithFakerTests extends TestBase{
+public class RegistrationWithFakerTests extends TestBase {
 
     @Test
     void fillingForm() {
