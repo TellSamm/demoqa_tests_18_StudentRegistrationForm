@@ -58,12 +58,14 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage bannerRemoval(){
+
+    public RegistrationPage bannerRemoval() {
         executeJavaScript(FIXED_BAN);
         executeJavaScript(FOOTER);
 
-       return this;
+        return this;
     }
+
 
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
