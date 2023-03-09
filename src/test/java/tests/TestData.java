@@ -10,7 +10,7 @@ public class TestData {
     public static String[] subjects = {"Accounting", "Maths", "Arts", "English", "Physics", "Chemistry",
             "Computer Science", "Economics", "Social Studies", "History", "Civics", "Commerce", "Hindi", "Biology"};
 
-    public static String[] hobbiess = {"Reading", "Sports", "Music"};
+    public static String[] hobbies = {"Reading", "Sports", "Music"};
 
     public static String[] cities = {"Delhi", "Gurgaon", "Noida"};
 

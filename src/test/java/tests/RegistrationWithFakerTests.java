@@ -10,13 +10,13 @@ public class RegistrationWithFakerTests extends TestBase {
         String userFirstName = faker.name().firstName(),
                 userLastName = faker.name().lastName(),
                 userEmail = faker.internet().emailAddress(),
-                userGenter = getRandomItemFromArray(gender),
+                userGender = getRandomItemFromArray(gender),
                 userNumber = 8 + faker.phoneNumber().subscriberNumber(9),
                 userBirthDay_day = String.format("%02d", faker.number().numberBetween(1, 28)),
                 userBirthDay_month = getRandomItemFromArray(months),
                 userBirthDay_year = String.valueOf(faker.number().numberBetween(1950, 2005)),
                 userSubjects = getRandomItemFromArray(subjects),
-                userHobbies = getRandomItemFromArray(hobbiess),
+                userHobbies = getRandomItemFromArray(hobbies),
                 userPictureLocation = "img/photo_2022.jpg",
                 userAddress = faker.address().fullAddress(),
                 userState = "NCR",
@@ -27,7 +27,7 @@ public class RegistrationWithFakerTests extends TestBase {
                 .setFirstName(userFirstName)
                 .setLastName(userLastName)
                 .setEmail(userEmail)
-                .clickUserGender(userGenter)
+                .clickUserGender(userGender)
                 .setNumber(userNumber)
                 .setBirthDate(userBirthDay_day, userBirthDay_month, userBirthDay_year)
                 .setSubjects(userSubjects)
@@ -42,7 +42,7 @@ public class RegistrationWithFakerTests extends TestBase {
         registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", userFirstName + " " + userLastName)
                 .verifyResult("Student Email", userEmail)
-                .verifyResult("Gender", userGenter)
+                .verifyResult("Gender", userGender)
                 .verifyResult("Mobile", userNumber)
                 .verifyResult("Date of Birth", userBirthDay_day + " " + userBirthDay_month + "," + userBirthDay_year)
                 .verifyResult("Subjects", userSubjects)
