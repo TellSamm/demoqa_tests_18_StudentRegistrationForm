@@ -1,3 +1,6 @@
+package tests;
+
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -30,7 +34,6 @@ public class AutomationPracticeFormWithCommentsTest {
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9196742969");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker-wrapper").click();
         $(".react-datepicker__month-select").click();
         $(".react-datepicker__month-select").selectOption("May");
         $(".react-datepicker__year-select").selectOption("1990");
@@ -45,6 +48,7 @@ public class AutomationPracticeFormWithCommentsTest {
         $("#react-select-4-option-0").click();
         $("#submit").click();
         $(".modal-dialog").should(appear);
+
 
 
     }

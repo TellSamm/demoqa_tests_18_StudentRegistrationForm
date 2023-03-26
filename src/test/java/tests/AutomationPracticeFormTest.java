@@ -1,3 +1,5 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -7,9 +9,9 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
 
 public class AutomationPracticeFormTest {
-
     @BeforeAll
     static void openPracticeForm() {
         Configuration.browserSize = "1920x1080";
@@ -38,10 +40,10 @@ public class AutomationPracticeFormTest {
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("img/photo_2022.jpg");
         $("#currentAddress").setValue("boulvar Mittova d.3");
-        $("#stateCity-wrapper").click();
-        $("#react-select-3-option-0").click();
+        $("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
         $("#city").click();
-        $("#react-select-4-option-0").click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
         $(".modal-dialog").should(appear);
 
@@ -58,9 +60,8 @@ public class AutomationPracticeFormTest {
         $(".modal-body").shouldHave(text("30 May,1990"));
         $(".modal-body").shouldHave(text("English"));
         $(".modal-body").shouldHave(text("Sports"));
-        $(".modal-body").shouldHave(text("photo_2022.jpg"));
-        $(".modal-body").shouldHave(text("Chuvashuya, Cheboksary, boulvar Mittova d.3"));
+        $(".modal-body").shouldHave(text("img/photo_2022.jpg"));
+        $(".modal-body").shouldHave(text("boulvar Mittova d.3"));
         $(".modal-body").shouldHave(text("NCR Delhi"));
     }
-
 }

@@ -1,18 +1,33 @@
 package tests;
-
 import org.junit.jupiter.api.Test;
 
 
+
 public class AutomationPracticeFormPageObjectsTest extends TestBase {
+    String userFirstName = "Semen";
+    String userLastName = "Chernikov";
+    String userEmail = "chernikov.semen21@gmail.com";
+    String userGender = "Male";
+    String userNumber = "9196742969";
+    String userBirthDay_day = "30";
+    String userBirthDay_month = "May";
+
+    String userBirthDay_year = "1990";
+    String userSubjects = "English";
+    String userHobbies = "Sports";
+    String userPictureLocation = "img/photo_2022.jpg";
+    String userAddress = "boulvar Mittova d.3";
+    String userState = "NCR";
+    String userCity = "Delhi";
 
     @Test
     void fillingForm() {
         registrationPage.openPage()
                 .bannerRemoval()
-                .setFirstName(userName)
+                .setFirstName(userFirstName)
                 .setLastName(userLastName)
                 .setEmail(userEmail)
-                .clickUserGender(userGenter)
+                .clickUserGender(userGender)
                 .setNumber(userNumber)
                 .setBirthDate(userBirthDay_day, userBirthDay_month, userBirthDay_year)
                 .setSubjects(userSubjects)
