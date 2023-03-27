@@ -1,11 +1,15 @@
 package tests;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 import java.util.Locale;
 import java.util.Map;
+
 
 
 public class TestBase {
@@ -28,6 +32,11 @@ public class TestBase {
         ));
 
         Configuration.browserCapabilities = capabilities; //конфигурация. Возможности браузера = возможности
+    }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide",new AllureSelenide());
     }
 
 

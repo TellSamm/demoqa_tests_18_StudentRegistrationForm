@@ -2,6 +2,8 @@ package tests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
+import static io.qameta.allure.Allure.step;
 import static tests.TestData.*;
 import static utils.RandomUtils.getRandomItemFromArray;
 
@@ -13,6 +15,11 @@ public class RegistrationWithFakerTests extends TestBase {
     @Test
     @Tag("FAKERTEST")
     void fillingForm() {
+        step("Ввод имени и фамилии", () -> {
+
+
+
+        });
         String userFirstName = faker.name().firstName(),
                 userLastName = faker.name().lastName(),
                 userEmail = faker.internet().emailAddress(),
@@ -27,6 +34,7 @@ public class RegistrationWithFakerTests extends TestBase {
                 userAddress = faker.address().fullAddress(),
                 userState = "NCR",
                 userCity = getRandomItemFromArray(cities);
+
 
         registrationPage.openPage()
                 .bannerRemoval()
@@ -44,7 +52,9 @@ public class RegistrationWithFakerTests extends TestBase {
                 .getUserCity(userCity)
                 .submitForm();
 
+        step("Ввод данных в форму регистрации пользователя", () -> {
 
+        });
         registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", userFirstName + " " + userLastName)
                 .verifyResult("Student Email", userEmail)
