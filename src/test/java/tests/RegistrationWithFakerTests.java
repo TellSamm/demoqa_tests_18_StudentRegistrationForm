@@ -15,11 +15,6 @@ public class RegistrationWithFakerTests extends TestBase {
     @Test
     @Tag("FAKERTEST")
     void fillingForm() {
-        step("Ввод имени и фамилии", () -> {
-
-
-
-        });
         String userFirstName = faker.name().firstName(),
                 userLastName = faker.name().lastName(),
                 userEmail = faker.internet().emailAddress(),
@@ -52,9 +47,6 @@ public class RegistrationWithFakerTests extends TestBase {
                 .getUserCity(userCity)
                 .submitForm();
 
-        step("Ввод данных в форму регистрации пользователя", () -> {
-
-        });
         registrationPage.verifyResultsModalAppears()
                 .verifyResult("Student Name", userFirstName + " " + userLastName)
                 .verifyResult("Student Email", userEmail)
