@@ -45,4 +45,12 @@ task simple_tests(type: Test){
     useJUnitPlatform {
         includeTags("simple")
     }
+
+}
+
+task javafeker_test(type: Test){
+    useJUnitPlatform {
+        includeTags("FAKERTEST")
+    }
+
 }

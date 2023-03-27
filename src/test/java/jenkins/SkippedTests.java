@@ -11,7 +11,14 @@ public class SkippedTests {
 
     @Test
     @Disabled("in developing =)")
-    void test4(){
+    void test43(){
+        Assertions.assertTrue(true);
+    }
+
+
+    @Test
+    @Disabled("bad test needs to be improved not included in the report")
+    void test42(){
         Assertions.assertTrue(true);
     }
 }

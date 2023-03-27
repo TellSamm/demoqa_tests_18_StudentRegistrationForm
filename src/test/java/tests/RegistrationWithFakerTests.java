@@ -1,11 +1,17 @@
 package tests;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static tests.TestData.*;
 import static utils.RandomUtils.getRandomItemFromArray;
 
+
+
+@DisplayName("Регистрация пользователя с использованием javafaker")
 public class RegistrationWithFakerTests extends TestBase {
 
     @Test
+    @Tag("FAKERTEST")
     void fillingForm() {
         String userFirstName = faker.name().firstName(),
                 userLastName = faker.name().lastName(),
