@@ -52,4 +52,16 @@ public class AllureTestRepeat {
         //withText Найти элемент, СОДЕРЖАЩИЙ заданный текст (в виде подстроки). Этот метод игнорирует разницу между пробелом и Этот метод игнорирует несколько пробелов.
 
     }
+
+    @Test
+    void testIssueSearch2(){
+        WebSteps steps = new WebSteps(); // объект класса WebSteps с его методами
+
+        steps.openMainPage();
+        steps.searchForRepository(REPOSITORY);
+        steps.clickOnRepositoryLink(REPOSITORY);
+        steps.openIssuesTab();
+        steps.shouldSeeIssueWithNumber(ISSUE);
+
+    }
 }
