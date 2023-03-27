@@ -55,6 +55,8 @@ public class AllureTestRepeat {
 
     @Test
     void testIssueSearch2(){
+
+        SelenideLogger.addListener("allure", new AllureSelenide()); // добавляется сценарий теста как в IDEA
         WebSteps steps = new WebSteps(); // объект класса WebSteps с его методами
 
         steps.openMainPage();
